@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">atividade-api-mobile-DyogoAntonio</string>
+
+    <string-array name="opcoes_cores">
+        <item>Selecione uma cor (Opcional)</item>
+        <item>Branco (W)</item>
+        <item>Preto (B)</item>
+        <item>Azul (U)</item>
+        <item>Vermelho (R)</item>
+        <item>Verde (G)</item>
+    </string-array>
+
+    <string-array name="opcoes_tipos">
+        <item>Selecione um tipo (Opcional)</item>
+        <item>Criatura (Creature)</item>
+        <item>Feitiço (Sorcery)</item>
+        <item>Mágica Instantânea (Instant)</item>
+        <item>Artefato (Artifact)</item>
+        <item>Encantamento (Enchantment)</item>
+        <item>Planeswalker</item>
+        <item>Terreno (Land)</item>
+        <item>Terreno Básico (Basic Land)</item>
+    </string-array>
+
+</resources>
