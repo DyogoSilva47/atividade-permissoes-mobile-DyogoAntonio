@@ -1,10 +1,10 @@
 # Busca de Cartas Magic — Versão com Permissão Android
 
 ## Descrição
-Aplicativo Android que permite aos usuários buscar cartas do jogo Magic: The Gathering. [cite_start]O app oferece filtros por nome, identidade de cor e tipos de carta (Terrenos básicos e Criaturas), exibindo os detalhes principais e a arte da carta na interface. [cite_start]Nesta versão, o app evolui a partir da atividade anterior com a introdução de um sistema de alerta para monitoramento de preços utilizando permissões nativas.
+Aplicativo Android que permite aos usuários buscar cartas do jogo Magic: The Gathering. O app oferece filtros por nome, identidade de cor e tipos de carta (Terrenos básicos e Criaturas), exibindo os detalhes principais e a arte da carta na interface. Nesta versão, o app evolui a partir da atividade anterior com a introdução de um sistema de alerta para monitoramento de preços utilizando permissões nativas.
 
 ## Relação com a atividade anterior
-[cite_start]Na atividade original, a funcionalidade do miniapp era realizar a busca na API pública para exibir a imagem e os atributos da carta. [cite_start]Nesta nova versão, adicionamos um recurso para o usuário monitorar o valor de mercado (em dólares) da carta pesquisada, implementando o caso de uso real de permissão de notificação da plataforma Android.
+Na atividade original, a funcionalidade do miniapp era realizar a busca na API pública para exibir a imagem e os atributos da carta. Nesta nova versão, adicionamos um recurso para o usuário monitorar o valor de mercado (em dólares) da carta pesquisada, implementando o caso de uso real de permissão de notificação da plataforma Android.
 
 ## API utilizada
 - Nome da API: Scryfall API 
