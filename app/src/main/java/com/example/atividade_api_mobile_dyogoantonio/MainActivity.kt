@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
     private var ultimoNomeBuscado = ""
     private var ultimoPrecoBuscado = ""
 
-    // LÓGICA DA NOTIFICAÇÃO: O que fazer com a resposta da permissão do usuário
+    // LÓGICA DA NOTIFICAÇÃO
     private val pedirPermissaoLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted: Boolean ->
         if (isGranted) {
             // Permissão concedida: Dispara a notificação na hora
@@ -55,7 +55,6 @@ class MainActivity : AppCompatActivity() {
         // Inicializa o canal de notificações (Obrigatório para sistemas Android mais novos)
         criarCanalNotificacao()
 
-        // Conectando os elementos visuais
         etNomeCarta = findViewById(R.id.etNomeCarta)
         spinnerCor = findViewById(R.id.spinnerCor)
         spinnerTipo = findViewById(R.id.spinnerTipo)
@@ -69,7 +68,7 @@ class MainActivity : AppCompatActivity() {
             realizarBusca()
         }
 
-        // NOVO BOTÃO DE ALERTA: Gerencia o fluxo de permissão em runtime
+        //BOTÃO DE ALERTA: Gerencia o fluxo de permissão em runtime
         btnMonitorarPreco.setOnClickListener {
             if (ultimoNomeBuscado.isEmpty()) {
                 Toast.makeText(this, "Busque uma carta primeiro para monitorar o preço!", Toast.LENGTH_SHORT).show()
@@ -124,13 +123,13 @@ class MainActivity : AppCompatActivity() {
         val corPosicao = spinnerCor.selectedItemPosition
         val tipoPosicao = spinnerTipo.selectedItemPosition
 
-        // Sua validação original intacta
+
         if (nome.isEmpty() && corPosicao == 0 && tipoPosicao == 0) {
             tvResultado.text = "Preencha um nome, uma cor ou um tipo para buscar!"
             return
         }
 
-        // Seus textos originais de feedback visual
+
         tvResultado.text = "Buscando carta no deck..."
         ivCarta.setImageDrawable(null)
 
@@ -172,7 +171,7 @@ class MainActivity : AppCompatActivity() {
                     val tipoCarta = response.getString("type_line")
                     val custoMana = response.optString("mana_cost", "Sem custo (Terreno)")
 
-                    // Coletando o valor em dólares direto da API
+                    // Coleta o valor em dólares direto da API
                     val prices = response.optJSONObject("prices")
                     val precoUSD = prices?.optString("usd") ?: "Indisponível"
 
@@ -180,7 +179,7 @@ class MainActivity : AppCompatActivity() {
                     ultimoNomeBuscado = nomeCarta
                     ultimoPrecoBuscado = precoUSD
 
-                    // Sua estrutura de texto original expandida com a linha do preço real
+
                     val resultadoFormatado = """
                         Nome: $nomeCarta
                         Custo de Mana: $custoMana
@@ -207,7 +206,7 @@ class MainActivity : AppCompatActivity() {
                 }
             },
             { error ->
-                // Suas validações de erros técnicas mantidas iguaizinhas
+
                 val statusCode = error.networkResponse?.statusCode
                 if (statusCode == 404) {
                     tvResultado.text = "Nenhuma carta encontrada com essa combinação de filtros. Tente novamente!"
